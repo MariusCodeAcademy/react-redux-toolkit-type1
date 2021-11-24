@@ -7,3 +7,4 @@
 5. useDispatch hook for actions
 6. Toolkit, npm rm redux
 7. npm i @reduxjs/toolkit
+8. createSlice + configureStore

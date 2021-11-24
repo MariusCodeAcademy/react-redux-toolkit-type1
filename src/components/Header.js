@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 
 // jei isAuthenticated yra false - rodom tik login
 
+// Header.js paspaudus logout isloginam esam vartotoja
+
 const Header = () => {
   const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
   console.log('Header.js: isLoggedIn ===', isLoggedIn);
@@ -15,15 +17,19 @@ const Header = () => {
       <h1>Redux Auth</h1>
       <nav>
         <ul>
+          {isLoggedIn && (
+            <>
+              <li>
+                <a href='/'>My Products</a>
+              </li>
+              <li>
+                <a href='/'>My Sales</a>
+              </li>
+            </>
+          )}
           <li>
-            <a href='/'>My Products</a>
-          </li>
-          <li>
-            <a href='/'>My Sales</a>
-          </li>
-          <li>
-            <button>Logout</button>
-            <button>Login</button>
+            {isLoggedIn && <button>Logout</button>}
+            {!isLoggedIn && <button>Login</button>}
           </li>
         </ul>
       </nav>

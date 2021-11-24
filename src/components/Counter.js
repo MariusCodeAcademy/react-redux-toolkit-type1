@@ -4,8 +4,8 @@ import { counterActions } from '../store/store';
 
 const Counter = () => {
   // issitraukiam is state tai ko mums reikia  == counter
-  const counter = useSelector((state) => state.counter); // sukuria subscription automatiskai
-  const showC = useSelector((state) => state.showCounter); // sukuria subscription automatiskai
+  const counter = useSelector((state) => state.counter.counter); // sukuria subscription automatiskai
+  const showC = useSelector((state) => state.counter.showCounter); // sukuria subscription automatiskai
 
   // veiksmams is store vygdyti naudojam useDispatch()
   const dispatch = useDispatch();

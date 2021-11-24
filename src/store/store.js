@@ -6,6 +6,8 @@ const counterReducer = (state = initState, action) => {
   // console.log(state, action);
   switch (action.type) {
     case 'UP':
+      // state.counter++; // niekada nemutuoti state, visada grazinti pakeista kopija
+      // return state;
       return {
         counter: state.counter + 1,
         showCounter: state.showCounter,

@@ -1,6 +1,26 @@
 import { createStore } from 'redux';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initState = { counter: 0, showCounter: true };
+
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: initState,
+  reducers: {
+    up(state) {
+      state.counter++; // toollkit naudoja immer paketa tam kad nemutuotu o atnaujintu reiksmes taip kaip reikia reduceryje
+    },
+    down(state) {
+      state.counter--;
+    },
+    increase(state, action) {
+      state = state.counter + action.amount;
+    },
+    toggle(state) {
+      state.showCounter = !state.showCounter;
+    },
+  },
+});
 
 const counterReducer = (state = initState, action) => {
   // console.log(state, action);

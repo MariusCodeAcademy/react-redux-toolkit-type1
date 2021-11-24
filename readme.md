@@ -4,3 +4,6 @@
 2. create store/store.js
 3. provide store Index.js
 4. useSelect hook to use store
+5. useDispatch hook for actions
+6. Toolkit, npm rm redux
+7. npm i @reduxjs/toolkit

@@ -1,6 +1,15 @@
 import classes from './Header.module.css';
+import { useSelector } from 'react-redux';
+
+// pasiimti isAuthenticated state is store
+
+// jei isAuthenticated yra true - rodom my products ir my sales ir logout
+
+// jei isAuthenticated yra false - rodom tik login
 
 const Header = () => {
+  const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
+  console.log('Header.js: isLoggedIn ===', isLoggedIn);
   return (
     <header className={classes.header}>
       <h1>Redux Auth</h1>
@@ -14,6 +23,7 @@ const Header = () => {
           </li>
           <li>
             <button>Logout</button>
+            <button>Login</button>
           </li>
         </ul>
       </nav>

@@ -1,5 +1,8 @@
 import classes from './Auth.module.css';
 
+// Auth.js submitinant forma preventinam nustatytaji siuntima per HTTP
+// vygdom login veiksma is auth reducer
+
 const Auth = () => {
   return (
     <main className={classes.auth}>
